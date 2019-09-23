@@ -1977,7 +1977,7 @@ build_ffmpeg() {
         config_options+=" --enable-libxavs" # don't compile OS X 
       fi
     fi
-    local licensed_gpl=n # lgpl build with libx264 included for those with "commercial" license :)
+    local licensed_gpl=y # lgpl build with libx264 included for those with "commercial" license :)
     if [[ $licensed_gpl == 'y' ]]; then
       apply_patch file://$patch_dir/x264_non_gpl.diff -p1
       config_options+=" --enable-libx264"
@@ -2270,7 +2270,7 @@ original_cflags='-mtune=generic -O3' # high compatible by default, see #219, som
 #fi
 ffmpeg_git_checkout_version=
 build_ismindex=n
-enable_gpl=y
+enable_gpl=n
 build_x264_with_libav=n # To build x264 with Libavformat.
 ffmpeg_git_checkout="https://github.com/FFmpeg/FFmpeg.git"
 ffmpeg_source_dir=
